@@ -11,6 +11,7 @@ class _WeaponScreenState extends State<WeaponScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -22,7 +23,6 @@ class _WeaponScreenState extends State<WeaponScreen> {
                     return Container(
                       height: 100,
                       width: 200,
-                      color: Colors.grey,
                       child: Text('$index'),
                     );
                   },

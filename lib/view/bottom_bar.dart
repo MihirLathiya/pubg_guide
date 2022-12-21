@@ -17,8 +17,15 @@ class _AppBottomBarState extends State<AppBottomBar> {
     Container(),
     Container(),
   ];
+
+  List<String> listMenu = [
+    'assets/content/weapon.png',
+    'assets/content/map.png',
+    'assets/content/compare.png'
+  ];
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size.width / 414;
     return Obx(
       () => Scaffold(
         backgroundColor: Colors.transparent,
@@ -27,9 +34,37 @@ class _AppBottomBarState extends State<AppBottomBar> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
-              height: 100,
-              width: Get.width - 20,
-              color: Colors.indigo,
+              padding: EdgeInsets.symmetric(horizontal: 30),
+              height: 60,
+              width: Get.width - 50,
+              decoration: BoxDecoration(
+                color: Colors.white54,
+                borderRadius: BorderRadius.circular(
+                  50,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.shade100,
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ...List.generate(
+                    listMenu.length,
+                    (index) => Column(
+                      children: [
+                        Image.asset(
+                          '${listMenu[index]}',
+                          height: 30,
+                          width: 30,
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
             SizedBox(
               height: 20,
