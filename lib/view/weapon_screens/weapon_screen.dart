@@ -3,7 +3,11 @@ import 'package:get/get.dart';
 import 'package:pubg_guide/app_data.dart';
 import 'package:pubg_guide/view/ammo_screens/ammo_categories_screen.dart';
 import 'package:pubg_guide/view/attechment_screen/attachment_categories.dart';
+import 'package:pubg_guide/view/consumable_screens/consumable_screen.dart';
+import 'package:pubg_guide/view/equipment_screens/equipment_screen.dart';
+import 'package:pubg_guide/view/map_screens/map_screen.dart';
 import 'package:pubg_guide/view/throwable_screens/throwable_screen.dart';
+import 'package:pubg_guide/view/vehicle_screens/vehicle_screen.dart';
 import 'package:pubg_guide/view/weapon_screens/weapon_categories.dart';
 import 'package:pubg_guide/widget/app_color.dart';
 import 'package:pubg_guide/widget/common_button.dart';
@@ -89,7 +93,9 @@ class _WeaponScreenState extends State<WeaponScreen> {
                       height: 20,
                     ),
                     CommonButton(
-                      onPress: () {},
+                      onPress: () {
+                        Get.to(() => EquipmentScreen());
+                      },
                       title: 'Equipments',
                       imagePath: allAppData['equipments'][1]['url_image_asset'],
                       angle: 0,
@@ -98,7 +104,9 @@ class _WeaponScreenState extends State<WeaponScreen> {
                       height: 20,
                     ),
                     CommonButton(
-                      onPress: () {},
+                      onPress: () {
+                        Get.to(() => ConsumableScreen());
+                      },
                       title: 'Consumables',
                       angle: 0,
                       imagePath: allAppData['consumables'][0]
@@ -108,7 +116,9 @@ class _WeaponScreenState extends State<WeaponScreen> {
                       height: 20,
                     ),
                     CommonButton(
-                      onPress: () {},
+                      onPress: () {
+                        Get.to(() => VehicleScreen());
+                      },
                       title: 'Vehicles',
                       imagePath: allAppData['vehicles'][0]['url_image_asset'],
                       angle: 0,
@@ -117,9 +127,11 @@ class _WeaponScreenState extends State<WeaponScreen> {
                       height: 20,
                     ),
                     CommonButton(
-                      onPress: () {},
+                      onPress: () {
+                        Get.to(() => MapScreen());
+                      },
                       title: 'Maps',
-                      imagePath: 'assets/content/mele/maps/map_erangel.webp',
+                      imagePath: allAppData['maps'][0]['url_image_asset'],
                       angle: 0,
                     ),
                     const SizedBox(

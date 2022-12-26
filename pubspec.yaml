@@ -73,7 +73,7 @@ flutter:
      - assets/content/consumables/
      - assets/content/equipment/
      - assets/content/mele/
-     - assets/content/mele/maps/
+     - assets/content/maps/
      - assets/content/stocks/
      - assets/content/throwable/
      - assets/content/tips_bgs/
