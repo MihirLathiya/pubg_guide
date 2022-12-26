@@ -13,19 +13,18 @@ class AppBottomBar extends StatefulWidget {
 class _AppBottomBarState extends State<AppBottomBar> {
   BottomController bottomController = Get.put(BottomController());
   List pages = [
-    WeaponScreen(),
+    const WeaponScreen(),
     Container(),
     Container(),
   ];
 
-  List<String> listMenu = [
-    'assets/content/weapon.png',
-    'assets/content/map.png',
-    'assets/content/compare.png'
+  List<IconData> listMenu = [
+    Icons.home_outlined,
+    Icons.map_outlined,
+    Icons.compare_outlined
   ];
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size.width / 414;
     return Obx(
       () => Scaffold(
         backgroundColor: Colors.transparent,
@@ -34,14 +33,12 @@ class _AppBottomBarState extends State<AppBottomBar> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               height: 60,
               width: Get.width - 50,
               decoration: BoxDecoration(
                 color: Colors.white54,
-                borderRadius: BorderRadius.circular(
-                  50,
-                ),
+                borderRadius: BorderRadius.circular(50),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.shade100,
@@ -50,23 +47,23 @@ class _AppBottomBarState extends State<AppBottomBar> {
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   ...List.generate(
                     listMenu.length,
-                    (index) => Column(
-                      children: [
-                        Image.asset(
-                          '${listMenu[index]}',
-                          height: 30,
-                          width: 30,
-                        ),
-                      ],
+                    (index) => IconButton(
+                      onPressed: () {
+                        bottomController.selectItem(index);
+                      },
+                      icon: Icon(
+                        listMenu[index],
+                      ),
                     ),
                   )
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             )
           ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pubg_guide/view/bottom_bar.dart';
+import 'package:pubg_guide/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const AppBottomBar(),
+      home: const SplashScreen(),
     );
   }
 }
