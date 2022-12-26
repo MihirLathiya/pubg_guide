@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pubg_guide/app_data.dart';
+import 'package:pubg_guide/view/attechment_screen/attechment_view.dart';
 import 'package:pubg_guide/widget/app_color.dart';
 import 'package:pubg_guide/widget/common_appbar.dart';
 import 'package:pubg_guide/widget/common_text.dart';
@@ -124,7 +125,18 @@ Widget gunView(
             width: 15 * size,
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Get.to(
+                () => AttachmentViewScreen(
+                    weaponList: allAppData['attachments'][index]
+                        ['attachable_weapons'],
+                    type: allAppData['attachments'][index]['name'],
+                    appBarTitle: allAppData['attachments'][index]['name'],
+                    attachmentImage: allAppData['attachments'][index]
+                        ['url_image_asset'],
+                    feature: allAppData['attachments'][index]['features']),
+              );
+            },
             child: Icon(
               Icons.visibility,
               color: AppColor.white,

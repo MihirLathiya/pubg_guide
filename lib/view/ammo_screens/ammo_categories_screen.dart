@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pubg_guide/app_data.dart';
+import 'package:pubg_guide/view/ammo_screens/amo_view.dart';
 import 'package:pubg_guide/widget/app_color.dart';
 import 'package:pubg_guide/widget/common_appbar.dart';
 import 'package:pubg_guide/widget/common_button.dart';
@@ -36,7 +37,22 @@ class _AmmunitionScreenState extends State<AmmunitionScreen> {
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) {
           return CommonButton(
-            onPress: () {},
+            onPress: () {
+              Get.to(
+                () => AmmoViewScreen(
+                  ammoImage: allAppData['ammo'][index]['url_image_asset'],
+                  amoDescription: allAppData['ammo'][index]['description'],
+                  pickUpDelay: allAppData['ammo'][index]['features']
+                      ['Pickup delay'],
+                  appBarTitle: allAppData['ammo'][index]['name'],
+                  capacity: allAppData['ammo'][index]['features']['capacity'],
+                  type: allAppData['ammo'][index]['name'],
+                  readyDelay: allAppData['ammo'][index]['features']
+                      ['Ready delay'],
+                  weaponList: allAppData['ammo'][index]['attachable_weapons'],
+                ),
+              );
+            },
             title: allAppData['ammo'][index]['name'],
             angle: 0,
             imagePath: allAppData['ammo'][index]['url_image_asset'],

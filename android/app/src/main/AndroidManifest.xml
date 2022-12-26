@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pubg_guide">
    <application
-        android:label="pubg_guide"
+        android:label="Pubg Guide 2023"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
