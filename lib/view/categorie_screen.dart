@@ -13,14 +13,14 @@ import 'package:pubg_guide/widget/app_color.dart';
 import 'package:pubg_guide/widget/common_button.dart';
 import 'package:pubg_guide/widget/common_text.dart';
 
-class WeaponScreen extends StatefulWidget {
-  const WeaponScreen({Key? key}) : super(key: key);
+class CategoriesScreen extends StatefulWidget {
+  const CategoriesScreen({Key? key}) : super(key: key);
 
   @override
-  State<WeaponScreen> createState() => _WeaponScreenState();
+  State<CategoriesScreen> createState() => _CategoriesScreenState();
 }
 
-class _WeaponScreenState extends State<WeaponScreen> {
+class _CategoriesScreenState extends State<CategoriesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

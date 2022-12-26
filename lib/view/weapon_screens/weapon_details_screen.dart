@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pubg_guide/app_data.dart';
+import 'package:pubg_guide/view/weapon_screens/weapon_view.dart';
 import 'package:pubg_guide/widget/app_color.dart';
 import 'package:pubg_guide/widget/common_appbar.dart';
 import 'package:pubg_guide/widget/common_text.dart';
@@ -132,7 +133,58 @@ Widget gunView(
             width: 15 * size,
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Get.to(
+                () => WeaponViewScreen(
+                  appBarTitle: allAppData['weapons'][index]['name'] ?? 'NA',
+                  gunImage:
+                      allAppData['weapons'][index]['image_assets'] ?? 'NA',
+                  gunDescription:
+                      allAppData['weapons'][index]['description'] ?? 'NA',
+                  attachmentList:
+                      allAppData['weapons'][index]['attachments'] ?? 'NA',
+                  ammo: allAppData['weapons'][index]['weapon_details']
+                          ['Ammo'] ??
+                      'NA',
+                  magazine: allAppData['weapons'][index]['weapon_details']
+                          ['Magazine'] ??
+                      'NA',
+                  type: allAppData['weapons'][index]['weapon_details']
+                          ['Type'] ??
+                      'NA',
+                  bulletSpeed: allAppData['weapons'][index]['weapon_details']
+                          ['Bullet Speed'] ??
+                      'NA',
+                  timeBetween: allAppData['weapons'][index]['weapon_details']
+                          ['Time Between'] ??
+                      'NA',
+                  readyDelay: allAppData['weapons'][index]['weapon_details']
+                          ['Ready Delay'] ??
+                      'NA',
+                  extendMagazine: allAppData['weapons'][index]['weapon_details']
+                          ['Extend Magazine'] ??
+                      'NA',
+                  damage: allAppData['weapons'][index]['weapon_details']
+                          ['Damage'] ??
+                      'NA',
+                  firingMode: allAppData['weapons'][index]['weapon_details']
+                          ['Firing Mode'] ??
+                      'NA',
+                  impact: allAppData['weapons'][index]['weapon_details']
+                          ['Impact'] ??
+                      'NA',
+                  normalReload: allAppData['weapons'][index]['weapon_details']
+                          ['Normal Reload'] ??
+                      'NA',
+                  pickUpDelay: allAppData['weapons'][index]['weapon_details']
+                          ['Pickup Delay'] ??
+                      'NA',
+                  quickReload: allAppData['weapons'][index]['weapon_details']
+                          ['Quick Reload'] ??
+                      'NA',
+                ),
+              );
+            },
             child: Icon(
               Icons.visibility,
               color: AppColor.white,

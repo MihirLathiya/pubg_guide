@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pubg_guide/controller/bottom_bar_controller.dart';
-import 'package:pubg_guide/view/weapon_screens/weapon_screen.dart';
+import 'package:pubg_guide/view/categorie_screen.dart';
 
 class AppBottomBar extends StatefulWidget {
   const AppBottomBar({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class AppBottomBar extends StatefulWidget {
 class _AppBottomBarState extends State<AppBottomBar> {
   BottomController bottomController = Get.put(BottomController());
   List pages = [
-    const WeaponScreen(),
+    const CategoriesScreen(),
     Container(),
     Container(),
   ];

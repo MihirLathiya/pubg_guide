@@ -3,7 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pubg_guide/view/weapon_screens/weapon_screen.dart';
+import 'package:pubg_guide/view/categorie_screen.dart';
 import 'package:pubg_guide/widget/app_image.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     selectSplash = Random().nextInt(splash.length);
     Timer(Duration(seconds: 3), () {
-      Get.offAll(() => WeaponScreen());
+      Get.offAll(() => CategoriesScreen());
     });
     super.initState();
   }
